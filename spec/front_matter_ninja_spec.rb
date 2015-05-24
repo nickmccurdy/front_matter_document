@@ -38,8 +38,8 @@ describe FrontMatterNinja do
     end
 
     context 'given no front matter' do
-      it 'returns an empty Hash' do
-        expect(FrontMatterNinja.parse('Hello, world!')).to eq({})
+      it 'returns nil' do
+        expect(FrontMatterNinja.parse('Hello, world!')).to be_nil
       end
     end
   end

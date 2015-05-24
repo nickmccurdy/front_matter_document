@@ -9,7 +9,7 @@ module FrontMatterNinja
     if match && match[0]
       SafeYAML.load(match[0]) || {}
     else
-      {}
+      nil
     end
   end
 end

@@ -1,5 +1,15 @@
 require 'front_matter_ninja/version'
 
+require 'safe_yaml'
+
 module FrontMatterNinja
-  # Your code goes here...
+  def self.parse(string)
+    match = string.match(/\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m)
+
+    if match && match[0]
+      SafeYAML.load(match[0]) || {}
+    else
+      {}
+    end
+  end
 end

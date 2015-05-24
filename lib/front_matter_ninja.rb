@@ -1,6 +1,6 @@
 require 'front_matter_ninja/version'
 
-require 'safe_yaml'
+require 'safe_yaml/load'
 
 module FrontMatterNinja
   def self.parse(string)

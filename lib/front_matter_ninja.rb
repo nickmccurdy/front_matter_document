@@ -1,4 +1,4 @@
-require "front_matter_ninja/version"
+require 'front_matter_ninja/version'
 
 module FrontMatterNinja
   # Your code goes here...

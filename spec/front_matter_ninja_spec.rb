@@ -25,6 +25,7 @@ describe FrontMatterNinja do
 
       it 'returns a new FrontMatterNinja with parsed front matter' do
         expect(subject.data).to eq('one' => 1, 'two' => 2)
+        expect(subject.content).to eq 'Hello, world!'
       end
     end
 
@@ -40,6 +41,7 @@ describe FrontMatterNinja do
 
       it 'returns a new FrontMatterNinja with empty front matter' do
         expect(subject.data).to eq({})
+        expect(subject.content).to eq 'Hello, world!'
       end
     end
 
@@ -48,6 +50,7 @@ describe FrontMatterNinja do
 
       it 'returns a new FrontMatterNinja with nil front matter' do
         expect(subject.data).to be_nil
+        expect(subject.content).to eq 'Hello, world!'
       end
     end
   end

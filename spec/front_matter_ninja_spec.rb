@@ -8,8 +8,8 @@ describe FrontMatterNinja do
     expect(described_class::VERSION).not_to be nil
   end
 
-  describe '.parse' do
-    subject { described_class.parse doc }
+  describe '.new' do
+    subject { described_class.new doc }
 
     context 'given some front matter' do
       let(:doc) do
@@ -23,8 +23,8 @@ describe FrontMatterNinja do
         ).strip_heredoc.strip
       end
 
-      it 'returns a Hash of the front matter' do
-        is_expected.to eq('one' => 1, 'two' => 2)
+      it 'returns a new FrontMatterNinja with parsed front matter' do
+        expect(subject.data).to eq('one' => 1, 'two' => 2)
       end
     end
 
@@ -38,16 +38,16 @@ describe FrontMatterNinja do
         ).strip_heredoc.strip
       end
 
-      it 'returns an empty Hash' do
-        is_expected.to eq({})
+      it 'returns a new FrontMatterNinja with empty front matter' do
+        expect(subject.data).to eq({})
       end
     end
 
     context 'given no front matter' do
       let(:doc) { 'Hello, world!' }
 
-      it 'returns nil' do
-        is_expected.to be_nil
+      it 'returns a new FrontMatterNinja with nil front matter' do
+        expect(subject.data).to be_nil
       end
     end
   end

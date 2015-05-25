@@ -2,14 +2,12 @@ require 'front_matter_ninja/version'
 
 require 'safe_yaml/load'
 
-module FrontMatterNinja
-  def self.parse(string)
+class FrontMatterNinja
+  attr_accessor :data
+
+  def initialize(string)
     match = string.match(/\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)/m)
 
-    if match && match[0]
-      SafeYAML.load(match[0]) || {}
-    else
-      nil
-    end
+    @data = SafeYAML.load(match[0]) || {} if match
   end
 end

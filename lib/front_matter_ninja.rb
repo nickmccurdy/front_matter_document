@@ -21,4 +21,8 @@ class FrontMatterNinja
   def raw_data=(data)
     @data = SafeYAML.load(data) || {}
   end
+
+  def to_s
+    "---\n#{raw_data}---\n\n#{content}"
+  end
 end

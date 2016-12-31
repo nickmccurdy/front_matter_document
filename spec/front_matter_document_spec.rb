@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'active_support'
 require 'active_support/core_ext/string'
 
-describe FrontMatterNinja do
+describe FrontMatterDocument do
   subject { described_class.new doc }
 
   let(:doc) do
@@ -23,7 +23,7 @@ describe FrontMatterNinja do
 
   describe '.new' do
     context 'given some front matter' do
-      it 'returns a new FrontMatterNinja with parsed front matter' do
+      it 'returns a new FrontMatterDocument with parsed front matter' do
         expect(subject.data).to eq('one' => 1, 'two' => 2)
         expect(subject.raw_data).to eq %(
           one: 1
@@ -43,7 +43,7 @@ describe FrontMatterNinja do
         ).strip_heredoc.strip
       end
 
-      it 'returns a new FrontMatterNinja with empty front matter' do
+      it 'returns a new FrontMatterDocument with empty front matter' do
         expect(subject.data).to eq({})
         expect(subject.raw_data).to eq "{}\n"
         expect(subject.content).to eq 'Hello, world!'
@@ -53,7 +53,7 @@ describe FrontMatterNinja do
     context 'given no front matter' do
       let(:doc) { 'Hello, world!' }
 
-      it 'returns a new FrontMatterNinja with nil front matter' do
+      it 'returns a new FrontMatterDocument with nil front matter' do
         expect(subject.data).to be_nil
         expect(subject.raw_data).to eq ''
         expect(subject.content).to eq 'Hello, world!'

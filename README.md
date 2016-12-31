@@ -1,5 +1,5 @@
-# FrontMatterNinja
-[![Build Status](https://travis-ci.org/nicolasmccurdy/front_matter_ninja.svg?branch=master)](https://travis-ci.org/nicolasmccurdy/front_matter_ninja)
+# FrontMatterDocument
+[![Build Status](https://travis-ci.org/nickmccurdy/front_matter_document.svg?branch=master)](https://travis-ci.org/nickmccurdy/front_matter_document)
 
 A library for parsing and modifying front matter.
 
@@ -8,7 +8,7 @@ A library for parsing and modifying front matter.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'front_matter_ninja'
+gem 'front_matter_document'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install front_matter_ninja
+    $ gem install front_matter_document
 
 ## Usage
 
@@ -31,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nickmccurdy/front_matter_ninja.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nickmccurdy/front_matter_document.
 
 
 ## License

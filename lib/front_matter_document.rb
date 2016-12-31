@@ -1,8 +1,8 @@
-require 'front_matter_ninja/version'
+require 'front_matter_document/version'
 
 require 'safe_yaml/load'
 
-class FrontMatterNinja
+class FrontMatterDocument
   attr_accessor :data, :content
 
   DOCUMENT_MATCHER = /\A(---\s*\n.*?\n?)^((---|\.\.\.)\s*$\n?)(.*)/m

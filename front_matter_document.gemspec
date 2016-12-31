@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'front_matter_ninja/version'
+require 'front_matter_document/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'front_matter_ninja'
-  spec.version       = FrontMatterNinja::VERSION
+  spec.name          = 'front_matter_document'
+  spec.version       = FrontMatterDocument::VERSION
   spec.authors       = ['Nick McCurdy']
   spec.email         = ['thenickperson@gmail.com']
 
   spec.summary       = 'A library for parsing and modifying front matter.'
-  spec.homepage      = 'https://github.com/nickmccurdy/front_matter_ninja'
+  spec.homepage      = 'https://github.com/nickmccurdy/front_matter_document'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

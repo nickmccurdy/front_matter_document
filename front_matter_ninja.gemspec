@@ -6,33 +6,33 @@ require 'front_matter_ninja/version'
 Gem::Specification.new do |spec|
   spec.name          = 'front_matter_ninja'
   spec.version       = FrontMatterNinja::VERSION
-  spec.authors       = ['Nicolas McCurdy']
+  spec.authors       = ['Nick McCurdy']
   spec.email         = ['thenickperson@gmail.com']
 
   spec.summary       = 'A library for parsing and modifying front matter.'
-  spec.homepage      = 'https://github.com/nicolasmccurdy/front_matter_ninja'
+  spec.homepage      = 'https://github.com/nickmccurdy/front_matter_ninja'
   spec.license       = 'MIT'
 
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
-  # delete this section to allow pushing this gem to any host.
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
   else
-    fail 'RubyGems 2.0 or newer is required to protect against public gem ' \
-         'pushes.'
+    raise 'RubyGems 2.0 or newer is required to protect against ' \
+      'public gem pushes.'
   end
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(/^(test|spec|features)\//)
+    f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(/^exe\//) { |f| File.basename(f) }
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'safe_yaml', '~> 1.0'
 
-  spec.add_development_dependency 'bundler', '~> 1.9'
+  spec.add_development_dependency 'bundler', '~> 1.13'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'activesupport', '~> 4.2'
+  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'activesupport', '~> 5.0.1'
 end

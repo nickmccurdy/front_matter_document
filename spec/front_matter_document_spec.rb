@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-require 'active_support'
-require 'active_support/core_ext/string'
+require 'active_support/core_ext/string/strip'
 
 describe FrontMatterDocument do
   subject { described_class.new doc }
